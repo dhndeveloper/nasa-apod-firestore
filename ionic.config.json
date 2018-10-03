@@ -1,0 +1,7 @@
+{
+  "name": "apod",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

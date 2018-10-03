@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Home
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content>
+ 
+<ion-card *ngFor="let image of apodImageList | async ">
+  <ion-item>
+      <h3> {{image.title}}</h3>
+  </ion-item>
+  
+    <img [src]="image.hdurl">
+  
+    <ion-card-content>
+      <p>{{ image.explanation }}</p>
+    </ion-card-content>
+  
+    <ion-row>
+
+      <ion-col>
+        <button (click)="addLike(image.id)">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{ image.count }}</div>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+      
+    </ion-row>
+  
+  </ion-card>
+
+</ion-content>
